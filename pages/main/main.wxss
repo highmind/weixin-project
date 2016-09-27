@@ -1,0 +1,21 @@
+/**main.wxss**/
+.bottom-section{position:fixed;left:0;bottom:0;
+  width:100%;height:40rpx;
+  border-top:1px solid #000;
+  display:flex;
+}
+
+.movie-btn,.cinema-btn{width:50%;text-align: center;line-height:80px}
+.movie-hover{background-color: green;}
+
+.movie-list{padding:20rpx 4%;display: flex;flex-direction:row;width:92%;}
+.movie-i-img{display:block;width:200rpx;height:200rpx;}
+.movie-content{width:100%;padding-left:10px;font-size:32rpx;}
+.movie-info-head{display: flex;flex-direction:row;}
+.movie-title{width:70%;}
+.movie-score{width:30%;}
+.color-g1{color:#666;}
+.ft14{font-size:28rpx;}
+.ft12{font-size:24rpx;}
+.movie-info-head,.movie-desc,.play-time{margin-top:20rpx;}
+

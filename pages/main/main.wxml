@@ -1,0 +1,39 @@
+<!--main.wxml-->
+
+<view class="main-container">
+
+   <view class="movie-list">
+       <view class="movie-img">
+           <image class="movie-i-img" mode="center" src="/images/img1.jpg"></image>
+       </view>
+       <view class="movie-content">
+
+               <view class="movie-info-head">
+                    <view  class="movie-title"> 
+                        <text>从你的世界路过</text>
+                    </view>
+
+                    <view  class="movie-score">
+                        <text>9.6分</text>
+                    </view> 
+               </view>
+
+                <view class="movie-desc">
+                    <text class="ft14 color-g1">邓超不逗比，深情又专一</text>
+                </view>
+
+                <view class="play-time">
+                    <text class="ft12 color-g1">本周四上映</text>
+                </view>
+
+        </view>
+
+   </view>
+
+   <view class="bottom-section">
+         <navigator class="movie-btn" url="navigate?title=movie" hover-class="movie-hover">影片</navigator>
+         <navigator class="cinema-btn" url="navigate?title=cinema" hover-class="cinema-hover">影院</navigator>
+   </view>
+
+</view>
+
