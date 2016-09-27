@@ -3,12 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    defaultSize: 'mini',
-    primarySize: 'mini',
-    warnSize: 'default',
-    disabled: false,
-    plain: false,
-    loading: false,
+    
     movieInfo: {}
   },
   //事件处理函数
@@ -18,18 +13,10 @@ Page({
     })
   },
 
-  showMoreInfo: function(){
-      wx.navigateTo({
-      url: '../detail/detail'
-    })
-  },
  
-  addMoreInfo: function(){
-
-  },
-
+ 
   onLoad: function () {
-    console.log('onLoad.... main')
+    console.log('onLoad.... detail')
     var that = this
     //调用应用实例的方法获取全局数据
     //调用远程接口数据
