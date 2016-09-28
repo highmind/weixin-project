@@ -4,7 +4,7 @@
 
  <view class="movie-ul" wx:for="{{movieInfo}}">
    <!-- 列表项开始 -->
-   <view class="movie-list" bindtap="showMoreInfo">
+   <view class="movie-list" bindtap="showMoreInfo" data-movieid="{{item.id}}">
 
        <view class="movie-img">
            <image class="movie-i-img" mode="aspectFit" src="{{item.img}}"></image>

@@ -17,13 +17,15 @@ Page({
       url: '../logs/logs'
     })
   },
+  //查看详情,通过点击事件传参，参数绑定在 view上 使用 data-movieid形式
+  showMoreInfo: function(e){
 
-  showMoreInfo: function(){
+      var movieId = e.currentTarget.dataset.movieid;
       wx.navigateTo({
-      url: '../detail/detail'
-    })
+        url: '../detail/detail?movieId=' + movieId
+      })
   },
- 
+ //加载更多
   addMoreInfo: function(){
 
   },

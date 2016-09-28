@@ -2,50 +2,53 @@
 
 <view class="main-container">
 
- <view class="movie-ul" wx:for="{{movieInfo}}">
-   <!-- 列表项开始 -->
-   <view class="movie-list" bindtap="showMoreInfo">
-
-       <view class="movie-img">
-           <image class="movie-i-img" mode="aspectFit" src="{{item.img}}"></image>
-       </view>
-
-        <view class="movie-info-c">
-               <view class="movie-info-row">
-                  <text class="ft16">{{item.nm}}</text>
-               </view>
-               <view class="movie-info-row">
-                  <text class="ft14 color-g1">{{item.scm}}</text>
-               </view>
-               <view class="movie-info-row">
-                  <text class="ft12 color-g1">{{item.showInfo}}</text>
-               </view>
-        </view>
-
-        <view class="movie-info-r">
-                <view wx:if="{{item.sc == 0}}"> 
-                    <text class="movie-score">{{item.wish}}人想看</text> 
-                </view>
-
-                <view wx:else> 
-                    <text class="movie-score">{{item.sc}}分</text> 
-                </view>
-               
-               <button class="more-btn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" >更多</button>    
-
-        </view>
-
-
-
-   </view>
-<!-- 列表项结束 -->
-
- </view>
-
  
-  <view class="add-more-content" bindtap="addMoreInfo">
-      <text class="add-more">加载更多影片</text>
-  </view>
+   <view class="movie-head">
+
+      <view class="movie-cover">
+          <image class="movie-i-img" mode="aspectFit" src="{{movieInfo.img}}"></image>
+      </view>
+
+      <view class="movie-detail-info">
+         <text class="movie-text color-white ft16">{{movieInfo.nm}}</text>
+         <text class="movie-text color-g1 ft12">{{movieInfo.scm}}</text>
+         <text class="movie-text color-orange">{{movieInfo.wish}}人想看</text>
+         <text class="movie-text color-g1 ft12">{{movieInfo.cat}}</text>
+         <text class="movie-text color-g1 ft12">{{movieInfo.src}} {{movieInfo.dur}}分钟</text>
+         <text class="movie-text color-g1 ft12">{{movieInfo.rt}}</text>
+      </view>
+      
+   </view>
+
+   <view class="movie-desc bg-white">
+        <text>{{movieInfo.dra}}</text>
+   </view>
+
+   <view class="section section_gap bg-white">
+      <view class="section__title ft16">电影演员</view>
+        <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%"  >
+            <view class="scroll-view-item_H actor-h" wx:for="{{actorInfo}}">
+              <image class="movie-img3" mode="aspectFit" src="/images/actor.jpg"></image>
+              <text class="actor-name">{{item}}</text>
+            </view>     
+       </scroll-view>
+   </view>
+   
+
+   <view class="section section_gap bg-white">
+      <view class="section__title ft16">电影剧照</view>
+        <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%"  >
+            <view class="scroll-view-item_H" wx:for="{{moviePhotos}}">
+              <image class="movie-img2" mode="aspectFit" src="{{item}}"></image>
+            </view>     
+       </scroll-view>
+   </view>
+   
+   
+   <view class="movie-video-section bg-white">
+        <view class="section__title ft16">电影片花</view>
+        <video class="movie-video" src="{{movieInfo.vd}}"  binderror="videoErrorCallback"></video>
+   </view>
 
 
    <view class="bottom-section">
