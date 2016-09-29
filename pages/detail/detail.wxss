@@ -1,5 +1,5 @@
 /**main.wxss**/
-.main-container{padding-bottom:104rpx;background-color: #f4f4f4;}
+.main-container{background-color: #f4f4f4;}
 
 .button-hover {
   background-color: red;

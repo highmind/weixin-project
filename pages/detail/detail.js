@@ -1,6 +1,5 @@
-//main.js
-//获取应用实例
-
+//detail.js
+//电影详情
 
 var app = getApp();
 
@@ -37,10 +36,17 @@ Page({
     })
   },
 
- 
+ onReady: function(){
+  wx.setNavigationBarTitle({
+      title: '影片详情'
+    })
+  },
+
  // res为页面间传参对象
   onLoad: function (res) {
     console.log('onLoad.... detail')
+   
+
     var that = this
 
     if(res != null){
