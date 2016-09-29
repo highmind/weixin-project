@@ -5,6 +5,7 @@ var app = getApp();
 
 Page({
   data: {
+    hidden: true,
     toView: 'red',
     scrollTop: 100,
     moviePhotos : [],
@@ -35,9 +36,19 @@ Page({
       scrollTop: this.data.scrollTop + 10
     })
   },
+ // onShow: function(){
+ //  this.setData({
+ //      hidden: false
+ //    });
+ // },
 
  onReady: function(){
-  wx.setNavigationBarTitle({
+
+   // this.setData({
+   //    hidden: true
+   //  });
+
+   wx.setNavigationBarTitle({
       title: '影片详情'
     })
   },
@@ -48,6 +59,9 @@ Page({
    
 
     var that = this
+    that.setData({  
+        hidden: false
+    })
 
     if(res != null){
 
@@ -55,9 +69,10 @@ Page({
 
       //调用远程接口数据
       wx.request({
-        url: 'http://101.201.115.46/code-test/api/movie-my-wx/detail-my.php',
+        url: 'http://localhost/test/api/detail-my.php',
         data: {
-           id: movieId
+           id: movieId,
+           sleep : 1
         },
         header: {
             'Content-Type': 'application/json'
@@ -83,12 +98,15 @@ Page({
           movieData.dra = dra.replace(/<[^>]+>/g,"");
  
           // console.log(imgsrc);
-
-          that.setData({
+     
+         that.setData({
              moviePhotos : photos,
              movieInfo : movieData,
-             actorInfo : actorArr
+             actorInfo : actorArr,
+             hidden: true
           })
+
+         
      
          
         }

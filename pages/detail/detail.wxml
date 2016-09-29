@@ -2,7 +2,8 @@
 
 <view class="main-container">
 
- 
+
+  
    <view class="movie-head">
 
       <view class="movie-cover">
@@ -58,3 +59,6 @@
 
 </view>
 
+ <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
