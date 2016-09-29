@@ -1,8 +1,11 @@
 <!--main.wxml-->
 
-<view class="main-container">
 
- <view class="movie-ul" wx:for="{{movieInfo}}">
+<view class="srcoll-section">
+
+  <scroll-view scroll-y="true" class="scroll-view" bindscrolltoupper="scrollUpper" bindscrolltolower="scrollLower" bindscroll="scroll" lower-threshold="250" scroll-top="{{scrollTop}}"  data-offset="{{offset}}">
+
+    <view class="movie-ul" wx:for="{{movieInfo}}">
    <!-- 列表项开始 -->
    <view class="movie-list" bindtap="showMoreInfo" data-movieid="{{item.id}}">
 
@@ -42,10 +45,55 @@
 
  </view>
 
- 
-  <view class="add-more-content" bindtap="addMoreInfo">
+    
+     <view class="add-more-content" bindtap="addMoreInfo">
       <text class="add-more">加载更多影片</text>
-  </view>
+  </view> 
+  </scroll-view>
+ </view>
+
+ <!-- <view class="movie-ul" wx:for="{{movieInfo}}"> -->
+   <!-- 列表项开始 -->
+   <!-- <view class="movie-list" bindtap="showMoreInfo" data-movieid="{{item.id}}">
+
+       <view class="movie-img">
+           <image class="movie-i-img" mode="aspectFit" src="{{item.img}}"></image>
+       </view>
+
+        <view class="movie-info-c">
+               <view class="movie-info-row">
+                  <text class="ft16">{{item.nm}}</text>
+               </view>
+               <view class="movie-info-row">
+                  <text class="ft14 color-g1">{{item.scm}}</text>
+               </view>
+               <view class="movie-info-row">
+                  <text class="ft12 color-g1">{{item.showInfo}}</text>
+               </view>
+        </view>
+
+        <view class="movie-info-r">
+                <view wx:if="{{item.sc == 0}}"> 
+                    <text class="movie-score">{{item.wish}}人想看</text> 
+                </view>
+
+                <view wx:else> 
+                    <text class="movie-score">{{item.sc}}分</text> 
+                </view>
+               
+               <button class="more-btn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" >更多</button>    
+
+        </view>
+
+
+
+   </view> -->
+<!-- 列表项结束 -->
+
+<!--  </view> -->
+
+ 
+
 
 <!-- 
    <view class="bottom-section">
@@ -53,7 +101,7 @@
          <navigator class="cinema-btn" url="navigate?title=cinema" hover-class="cinema-hover">影院</navigator>
    </view>
  -->
-</view>
+
 
  <loading hidden="{{hidden}}">
     加载中...

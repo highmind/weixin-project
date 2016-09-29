@@ -5,6 +5,7 @@ var app = getApp();
 
 Page({
   data: {
+    mOpen: false,
     hidden: true,
     toView: 'red',
     scrollTop: 100,
@@ -22,34 +23,40 @@ Page({
   upper: function(e) {
     console.log(e)
   },
+
   lower: function(e) {
     console.log(e)
   },
+
   scroll: function(e) {
     console.log(e)
   },
+
   tap: function(e) {
     
   },
+
   tapMove: function(e) {
     this.setData({
       scrollTop: this.data.scrollTop + 10
     })
   },
- // onShow: function(){
- //  this.setData({
- //      hidden: false
- //    });
- // },
+
+ moreMovieInfo:function(){
+   this.data.mOpen = !(this.data.mOpen);
+ 
+   this.setData({
+      mOpen:this.data.mOpen
+   });
+ },
 
  onReady: function(){
-
-   // this.setData({
-   //    hidden: true
-   //  });
-
-   wx.setNavigationBarTitle({
+    wx.setNavigationBarTitle({
       title: '影片详情'
+    });
+
+    this.setData({
+        mOpen:false
     })
   },
 
@@ -106,8 +113,6 @@ Page({
              hidden: true
           })
 
-         
-     
          
         }
       })

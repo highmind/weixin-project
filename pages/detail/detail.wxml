@@ -2,8 +2,6 @@
 
 <view class="main-container">
 
-
-  
    <view class="movie-head">
 
       <view class="movie-cover">
@@ -15,14 +13,20 @@
          <text class="movie-text color-g1 ft12">{{movieInfo.scm}}</text>
          <text class="movie-text color-orange">{{movieInfo.wish}}人想看</text>
          <text class="movie-text color-g1 ft12">{{movieInfo.cat}}</text>
-         <text class="movie-text color-g1 ft12">{{movieInfo.src}} {{movieInfo.dur}}分钟</text>
+         <text class="movie-text color-g1 ft12">{{movieInfo.src}}/{{movieInfo.dur}}分钟</text>
          <text class="movie-text color-g1 ft12">{{movieInfo.rt}}</text>
       </view>
       
    </view>
 
    <view class="movie-desc bg-white">
-        <text>{{movieInfo.dra}}</text>
+        <view class="movie-desc-con {{mOpen ? 'mOpen' : ''}}">
+          <text>{{movieInfo.dra}}</text>
+        </view>
+        <view class="arrow-se" bindtap="moreMovieInfo">
+          <image class="arrow {{mOpen ? 'arrowOpen' : ''}}" src="/images/arrowright.png"></image>
+        </view>
+        
    </view>
 
    <view class="section section_gap bg-white">

@@ -29,11 +29,18 @@
 
 .movie-head{display: flex;padding:60rpx 30rpx;background-color:#5e6c6e;}
 .movie-cover{width:220rpx;height:300rpx;}
-.movie-i-img{border:1px solid #fff;width:220rpx;height:300rpx;}
+.movie-i-img{border:1px solid #fff;width:214rpx;height:300rpx;}
 .movie-text{display: block;margin-bottom:16rpx;}
 .movie-detail-info{width:442rpx;padding-left:30rpx;}
 
-.movie-desc{padding:30rpx;font-size:28rpx;line-height:1.8em;}
+.movie-desc-con{padding:30rpx;height:160rpx;overflow:hidden;font-size:28rpx;line-height:1.8em;}
+.mOpen{height:460rpx;}
+
+.arrow-se{width:100%;padding:8rpx 0;}
+.arrow{display: block;width:50rpx;height:50rpx;transition:all 0.3s linear;margin:0 auto;transform:rotate(90deg);}
+.arrowOpen{transform:rotate(-90deg);}
+
+
 .movie-video-section{padding:40rpx 10rpx;height:100%;}
 .movie-video{width:100%;height:100%;}
 
@@ -55,7 +62,7 @@
 .section_gap{padding:40rpx 10rpx;}
 
 
-.actor-name{display: block;font-size:24rpx;}
+.actor-name{display: block;font-size:24rpx;overflow:hidden;text-align:center;text-overflow: ellipsis;}
 .actor-h{text-align: center;width: 140rpx;height: 240rpx;}
 
 .movie-img3{ width: 140rpx;height: 180rpx;}

@@ -10,12 +10,32 @@ Page({
     plain: false,
     loading: false,
     hidden: true,
-    movieInfo: {}
+    movieInfo: {},
+
+    scrollTop: 100,
+
+    offset:0
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
+    })
+  },
+  //滑动到顶部触发
+  scrollUpper:function(){
+    console.log('to top');
+  },
+  // scrollview 滑动到底部时触发
+  scrollLower:function(){
+    console.log('to bottom')
+  },
+  scroll:function(){
+    console.log('scrolling')
+  },
+  tapMove: function(e) {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
     })
   },
   //查看详情,通过点击事件传参，参数绑定在 view上 使用 data-movieid形式
@@ -43,8 +63,8 @@ Page({
       url: 'http://localhost/test/api/movie-my.php',
       data: {
          offset: 0, //第2条开始
-         limit: 10,  //取10条
-         sleep : 1 //接口返回数据延迟时间，用于测试loading
+         limit: 20,  //取10条
+         sleep : 0 //接口返回数据延迟时间，用于测试loading
       },
       header: {
           'Content-Type': 'application/json'

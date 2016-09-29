@@ -1,6 +1,6 @@
 /**main.wxss**/
-.main-container{}
-
+.scroll-view{height:100%;}
+.srcoll-section{height:100%;overflow:hidden;}
 .button-hover {
   background-color: red;
 }
