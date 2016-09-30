@@ -38,4 +38,5 @@
 
 .coming-movie-content{height:60rpx;line-height:60rpx;text-align: center;border-bottom:1px solid #d6d6d6;background-color: #eee;}
 
-.gotop{display: block;width:100rpx;height:100rpx;background-color: red;position: fixed;right:10rpx;bottom:100rpx;}
+.gotop{display: block;width:74rpx;height:74rpx;background:url(/images/gotop.png) no-repeat;background-size:cover;position: fixed;right:20rpx;bottom:100rpx;}
+.toTopHidden{display: none;}

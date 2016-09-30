@@ -9,11 +9,11 @@ Page({
     hidden: true,       //loading 设置
     movieInfo: [],    //正在热映
     movieInfoCom :[], //即将上映
-    scrollTop: 100, //用于滚动
-    offset: 0,
-    limit: 10,
-    toTop: '',
-    scrollTop : 0  //scrollview 滚动条默认位置
+    offset: 0,        //数据开始页
+    limit: 10,        //每次加载条数
+    toTop: '',       //scorllView要滚动到的顶部id,默认为空
+    scrollTop : 0,  //scrollview 滚动条默认位置
+    toTopStatus : true //控制回到顶部 按钮显示和隐藏状态
   },
 
   //滑动到顶部触发
@@ -29,7 +29,9 @@ Page({
     this.setData({
       hidden:false
     })
+
     console.log(that.data.offset + that.data.limit)
+   //滑动到底部时,请求 即将上映 的电影数据
     wx.request({
       url: 'http://localhost/wx-project/api/movie-my.php',
 
@@ -47,9 +49,9 @@ Page({
       success: function(res) {
         console.log(res.data.data.movies)
         that.setData({
-           movieInfoCom : that.data.movieInfoCom.concat(res.data.data.movies),
-           hidden: true,
-           offset:that.data.offset + that.data.limit
+           movieInfoCom : that.data.movieInfoCom.concat(res.data.data.movies), //当前页数据和下一页数据  数组合并，这样才能全部更新到view上
+           hidden : true,
+           offset : that.data.offset + that.data.limit
         })
       }
 
@@ -57,11 +59,28 @@ Page({
 
   },
   //滑动中  设置 toTop为 空，用于返回顶部
-  scroll:function(){
-    console.log('scrolling')
+  scroll:function(e){
+     
+     // console.log(e.detail.scrollTop)
+     // console.log( typeof(this.data.toTop))
+
+    //滚动高度超过一定范围 并且返回顶部按钮是隐藏的时候，显示 返回顶部按钮
+    // console.log(this.data.toTop + 'sdfsdfsfd');
+    if(e.detail.scrollTop >= 600 && this.data.toTopStatus ){
+      this.setData({
+        toTopStatus : false
+      });
+    }
+
+    //防止重复设置toTop
+     if(this.data.toTop == ''){
+        return;
+     }
+     //滑动的时候，将返回顶部id 变为空
      this.setData({
-      toTop : ''
-    })
+       toTop : ''
+     })
+
   },
   //查看详情,通过点击事件传参，参数绑定在 view上 使用 data-movieid形式
   showMoreInfo: function(e){
@@ -73,15 +92,19 @@ Page({
   //返回顶部
   goTop : function(){
     this.setData({
-      toTop : 'top'
+      toTopStatus : true, //隐藏返回顶部按钮
+      toTop : 'top'       //设置scrollview 定位 id 为 top
+
     })
   },
 
   onLoad: function () {
     console.log('onLoad.... main')
-    var that = this
+    var that = this;
+    //页面加载时，打开loading，隐藏返回顶部按钮
     this.setData({
-      hidden:false
+      hidden:false,
+      toTopStatus : true
     })
     //调用应用实例的方法获取全局数据
     //调用远程接口数据

@@ -12,12 +12,6 @@ Page({
     actorInfo : [],
     movieInfo: {}
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
 
   upper: function(e) {
     console.log(e)
@@ -41,6 +35,7 @@ Page({
     })
   },
 
+//电影文字信息 更多按钮
  moreMovieInfo:function(){
    this.data.mOpen = !(this.data.mOpen);
  
@@ -50,10 +45,11 @@ Page({
  },
 
  onReady: function(){
+  //设置底部栏文字
     wx.setNavigationBarTitle({
       title: '影片详情'
     });
-
+    //设置箭头按钮 打开方向
     this.setData({
         mOpen:false
     })
@@ -63,44 +59,46 @@ Page({
   onLoad: function (res) {
     console.log('onLoad.... detail')
    
-
-    var that = this
+    var that = this;
+    //设置loading状态
     that.setData({  
         hidden: false
     })
 
     if(res != null){
-
+      //获取电影id
       movieId = res.movieId;
 
       //调用远程接口数据
       wx.request({
         url: 'http://localhost/wx-project/api/detail-my.php',
+        //传给接口的数据
         data: {
            id: movieId,
            sleep : 1
         },
+
         header: {
             'Content-Type': 'application/json'
         },
+
         success: function(res) {
           console.log(res);
-
           var movieData = res.data.data.MovieDetailModel;
           var dra = movieData.dra;
           var photos = movieData.photos;
 
           // console.log(photos)
-
+          //处理 电影剧照字符串，正常输出不能使用，需要 去的 /w.h
           for(var i = 0; i < photos.length; i++){
             photos[i] = photos[i].replace('/w.h', "").replace('@100w_100h_1e_1c', "") + '@180w_140h_1e_1c';
           }
-
+          //将演员字符串 转换成数据，并且去除数组最后一个空格
           actorArr = movieData.star.split(' ');
           actorArr.pop();
-          console.log(actorArr);
+          // console.log(actorArr);
           // cons=res.data.data.MovieDetailModel;e.log(photos);
-
+          //去除 电影简介中的 p标签
           movieData.dra = dra.replace(/<[^>]+>/g,"");
  
           // console.log(imgsrc);
