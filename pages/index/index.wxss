@@ -36,4 +36,6 @@
 
 .add-more-content{text-align: center;color:#DE3435;padding:16rpx 0;}
 
+.coming-movie-content{height:60rpx;line-height:60rpx;text-align: center;border-bottom:1px solid #d6d6d6;background-color: #eee;}
 
+.gotop{display: block;width:100rpx;height:100rpx;background-color: red;position: fixed;right:10rpx;bottom:100rpx;}

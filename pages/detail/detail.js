@@ -8,7 +8,6 @@ Page({
     mOpen: false,
     hidden: true,
     toView: 'red',
-    scrollTop: 100,
     moviePhotos : [],
     actorInfo : [],
     movieInfo: {}
@@ -76,7 +75,7 @@ Page({
 
       //调用远程接口数据
       wx.request({
-        url: 'http://localhost/test/api/detail-my.php',
+        url: 'http://localhost/wx-project/api/detail-my.php',
         data: {
            id: movieId,
            sleep : 1
