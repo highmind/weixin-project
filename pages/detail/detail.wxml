@@ -12,10 +12,14 @@
       <view class="movie-detail-info">
          <text class="movie-text color-white ft16">{{movieInfo.movie.nm}}</text>
          <text class="movie-text color-g1 ft12">{{movieInfo.movie.enm}}</text>
-         <text class="movie-text color-orange">{{movieInfo.movie.wish}}人想看</text>
+         <text class="movie-text color-orange" wx:if="{{movieInfo.movie.sc == 0}}">{{movieInfo.movie.wish}}人想看</text>
+         <view class="movie-text" wx:else>
+           <text class="color-g1 ft14">评分</text>
+           <text class="color-orange ftbold ft14"> {{movieInfo.movie.sc}}</text>
+         </view>
          <text class="movie-text color-g1 ft12">{{movieInfo.movie.cat}}</text>
-         <text class="movie-text color-g1 ft12">{{movieInfo.movie.src}}/{{movieInfo.dur}}分钟</text>
-         <text class="movie-text color-g1 ft12">{{movieInfo.movie.rt}}</text>
+         <text class="movie-text color-g1 ft12">{{movieInfo.movie.src}}/{{movieInfo.movie.dur}}分钟</text>
+         <text class="movie-text color-g1 ft12">{{movieInfo.movie.pubDesc}}</text>
       </view>
       
    </view>

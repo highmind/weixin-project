@@ -14,17 +14,8 @@
 .ft16{font-size:32rpx;}
 .ft14{font-size:28rpx;}
 .ft12{font-size:24rpx;}
+.ftbold{font-weight:bold;}
 
-.bottom-section{position:fixed;
-  left:0;bottom:0;
-  width:100%;height:100rpx;
- border-top:2px solid #DE3435;
-  display:flex;
-  font-size:32rpx;
-  background-color: #fff;
-}
-.movie-btn,.cinema-btn{padding:0 2%;width:46%;text-align: center;line-height:100rpx}
-.movie-hover{background-color: #F8F8F8;color:#DE3435;}
 
 
 .movie-head{display: flex;padding:60rpx 30rpx;background-color:#5e6c6e;}
