@@ -47,7 +47,7 @@ Page({
  onReady: function(){
   //设置底部栏文字
     wx.setNavigationBarTitle({
-      title: '影片详情'
+      title: this.data.movieInfo.movie.nm
     });
     //设置箭头按钮 打开方向
     this.setData({

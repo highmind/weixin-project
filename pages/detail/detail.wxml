@@ -38,7 +38,7 @@
 
               <text class="actor-name">{{item.cnm}}</text>
               <text class="actor-name actor-roles" wx:if="{{index == 0}}">导演 {{item.roles}}</text>
-              <text class="actor-name actor-roles" wx:elif="{{item.roles == ''}}">暂无</text>
+             
               <text class="actor-name actor-roles" wx:else>{{item.roles}}</text>
 
 
