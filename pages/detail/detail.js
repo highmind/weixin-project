@@ -5,6 +5,7 @@ var app = getApp();
 
 Page({
   data: {
+    title: '影片详情',
     mOpen: false,
     hidden: true,
     toView: 'red',
@@ -45,9 +46,9 @@ Page({
  },
 
  onReady: function(){
-  //设置底部栏文字
+  //设置顶部栏文字
     wx.setNavigationBarTitle({
-      title: this.data.movieInfo.movie.nm
+      title: this.data.title
     });
     //设置箭头按钮 打开方向
     this.setData({
@@ -131,10 +132,20 @@ Page({
 
         success: function(res) {
           console.log(res);
-          var movieData = res.data;
+
+         
+        var movieData = res.data;
+        that.setData({
+          title : movieData.movie.nm
+        });
+
+        wx.setNavigationBarTitle({
+          title: movieData.movie.nm
+        });
        
          var photos = movieData.movie.photos;
          var actorArr = movieData.celebrities;
+
          // 电影封面
          var coverImg = movieData.movie.img;
          movieData.movie.img = coverImg.replace('/w.h', "").replace('@100w_100h_1e_1c', "") + '@177w_249h.webp';

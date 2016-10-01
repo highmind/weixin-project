@@ -25,7 +25,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#DF2D2D",
-    "navigationBarTitleText": "芝麻电影",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle":"white"
   },
   "debug": true

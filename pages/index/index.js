@@ -98,6 +98,22 @@ Page({
     })
   },
 
+   onShow: function(){
+  //设置顶部部栏文字
+    wx.setNavigationBarTitle({
+      title: '芝麻电影'
+    });
+  },
+
+   onReady: function(){
+  //设置顶部部栏文字
+    wx.setNavigationBarTitle({
+      title: '芝麻电影'
+    });
+  },
+
+
+
   onLoad: function () {
     console.log('onLoad.... main')
     var that = this;
