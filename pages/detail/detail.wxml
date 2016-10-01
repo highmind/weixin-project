@@ -1,6 +1,80 @@
 <!--main.wxml-->
 
+<!-- 更换接口以后的view结构 -->
 <view class="main-container">
+
+   <view class="movie-head">
+
+      <view class="movie-cover">
+          <image class="movie-i-img" mode="aspectFit" src="{{movieInfo.movie.img}}"></image>
+      </view>
+
+      <view class="movie-detail-info">
+         <text class="movie-text color-white ft16">{{movieInfo.movie.nm}}</text>
+         <text class="movie-text color-g1 ft12">{{movieInfo.movie.enm}}</text>
+         <text class="movie-text color-orange">{{movieInfo.movie.wish}}人想看</text>
+         <text class="movie-text color-g1 ft12">{{movieInfo.movie.cat}}</text>
+         <text class="movie-text color-g1 ft12">{{movieInfo.movie.src}}/{{movieInfo.dur}}分钟</text>
+         <text class="movie-text color-g1 ft12">{{movieInfo.movie.rt}}</text>
+      </view>
+      
+   </view>
+
+   <view class="movie-desc bg-white">
+        <view class="movie-desc-con {{mOpen ? 'mOpen' : ''}}">
+          <text>{{movieInfo.movie.dra}}</text>
+        </view>
+        <view class="arrow-se" bindtap="moreMovieInfo">
+          <image class="arrow {{mOpen ? 'arrowOpen' : ''}}" src="/images/arrowright.png"></image>
+        </view>
+        
+   </view>
+
+   <view class="section section_gap bg-white">
+      <view class="section__title ft16">演职人员</view>
+        <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%"  >
+            <view class="scroll-view-item_H actor-h" wx:for="{{actorInfo}}">
+              <image class="movie-img3" mode="aspectFit" src="{{item.avatar}}"></image>
+
+              <text class="actor-name">{{item.cnm}}</text>
+              <text class="actor-name actor-roles" wx:if="{{index == 0}}">导演 {{item.roles}}</text>
+              <text class="actor-name actor-roles" wx:elif="{{item.roles == ''}}">暂无</text>
+              <text class="actor-name actor-roles" wx:else>{{item.roles}}</text>
+
+
+            </view>     
+       </scroll-view>
+   </view>
+   
+
+   <view class="section section_gap bg-white">
+      <view class="section__title ft16">电影剧照</view>
+        <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%"  >
+            <view class="scroll-view-item_H" wx:for="{{moviePhotos}}">
+              <image class="movie-img2" mode="aspectFit" src="{{item}}"></image>
+            </view>     
+       </scroll-view>
+   </view>
+   
+   
+   <view class="movie-video-section bg-white">
+        <view class="section__title ft16">电影片花</view>
+        <video class="movie-video" src="{{movieInfo.movie.vd}}"  binderror="videoErrorCallback"></video>
+   </view>
+
+<!-- 
+   <view class="bottom-section">
+         <navigator class="movie-btn" url="navigate?title=movie" hover-class="movie-hover">影片</navigator>
+         <navigator class="cinema-btn" url="navigate?title=cinema" hover-class="cinema-hover">影院</navigator>
+   </view> -->
+
+</view>
+
+ <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+
+<!-- <view class="main-container">
 
    <view class="movie-head">
 
@@ -53,7 +127,7 @@
    <view class="movie-video-section bg-white">
         <view class="section__title ft16">电影片花</view>
         <video class="movie-video" src="{{movieInfo.vd}}"  binderror="videoErrorCallback"></video>
-   </view>
+   </view> -->
 
 <!-- 
    <view class="bottom-section">
@@ -61,8 +135,8 @@
          <navigator class="cinema-btn" url="navigate?title=cinema" hover-class="cinema-hover">影院</navigator>
    </view> -->
 
-</view>
+<!-- </view>
 
  <loading hidden="{{hidden}}" bindchange="loadingChange">
     加载中...
-  </loading>
+  </loading> -->

@@ -62,7 +62,8 @@
 .section_gap{padding:40rpx 10rpx;}
 
 
-.actor-name{display: block;font-size:24rpx;overflow:hidden;text-align:center;text-overflow: ellipsis;}
+.actor-name{display: block;height:40rpx;line-height:40rpx;font-size:24rpx;overflow:hidden;text-align:center;text-overflow: ellipsis;}
+.actor-roles{color:#999;}
 .actor-h{text-align: center;width: 140rpx;height: 240rpx;}
 
 .movie-img3{ width: 140rpx;height: 180rpx;}
