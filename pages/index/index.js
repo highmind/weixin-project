@@ -19,6 +19,10 @@ Page({
   //滑动到顶部触发
   scrollUpper:function(){
     console.log('to top');
+    //滑动到顶部时，把返回按钮隐藏
+    this.setData({
+        toTopStatus : true
+      });
     // this.onLoad();
   },
   //scrollview 滑动到底部时触发
