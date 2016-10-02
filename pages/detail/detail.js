@@ -11,6 +11,7 @@ Page({
     toView: 'red',
     moviePhotos : [],
     actorInfo : [],
+    comments : [],
     movieInfo: {}
   },
 
@@ -163,6 +164,10 @@ Page({
             actorArr[i].avatar = actorArr[i].avatar.replace('/w.h', "").replace('@100w_100h_1e_1c', "") + '@130w_180h_1e_1c';
           }
        
+       var commentData = movieData.comments.hcmts;
+       if(movieData.comments.hcmts.length == 0){
+          commentData = movieData.comments.cmts;
+       }
      
     
         console.log('格式化以后的数据');
@@ -172,6 +177,7 @@ Page({
              moviePhotos : photos,
              movieInfo : movieData,
              actorInfo : actorArr,
+             comments  : commentData,
              hidden: true
           })
 

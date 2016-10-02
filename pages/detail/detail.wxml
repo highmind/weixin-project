@@ -39,13 +39,9 @@
         <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%"  >
             <view class="scroll-view-item_H actor-h" wx:for="{{actorInfo}}">
               <image class="movie-img3" mode="aspectFit" src="{{item.avatar}}"></image>
-
               <text class="actor-name">{{item.cnm}}</text>
-              <text class="actor-name actor-roles" wx:if="{{index == 0}}">导演 {{item.roles}}</text>
-             
-              <text class="actor-name actor-roles" wx:else>{{item.roles}}</text>
-
-
+              <text class="actor-name color-gray" wx:if="{{index == 0}}">导演 {{item.roles}}</text>
+              <text class="actor-name color-gray" wx:else>{{item.roles}}</text>
             </view>     
        </scroll-view>
    </view>
@@ -64,6 +60,34 @@
    <view class="movie-video-section bg-white">
         <view class="section__title ft16">电影片花</view>
         <video class="movie-video" src="{{movieInfo.movie.vd}}"  binderror="videoErrorCallback"></video>
+   </view>
+
+   <view class="comment-se bg-white">
+      <view class="comment-title ft16">短评</view> 
+
+      <view class="comment-con" wx:for="{{comments}}">
+
+        <view class="comment-head"> 
+          <view class="comment-user">
+            <image class="user-ico" src="{{item.avatarurl}}@30w_30h.webp" alt=""></image>
+             <text class="comment-name color-gray ft12">{{item.nickName}}</text>
+          </view>
+          
+          <view class="comment-score">
+            <text class="a ft12">评分：</text> 
+            <text class="color-orange ftbold ft12">{{item.score}}</text>
+          </view>
+          
+        </view>
+
+        <text class="comment-text ft14">{{item.content}}</text>
+
+        <view class="comment-bottom">
+          <text class="comment-approve color-gray ft14">{{item.approve}} 赞</text>
+          <text class="comment-date color-gray ft14">{{item.time}}</text>
+        </view>
+         
+      </view>
    </view>
 
 <!-- 

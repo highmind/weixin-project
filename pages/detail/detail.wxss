@@ -5,11 +5,12 @@
   background-color: red;
 }
 
-.bg-white{background-color: #fff;margin-top:20rpx;}
+/*公共基础类*/
+.bg-white{background-color: #fff;margin-top:20rpx;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;}
 .color-g1{color:rgba(255,255,255,0.7);}
 .color-orange{color:#ff9900;}
 .color-white{color:#fff;}
-
+.color-gray{color:#999;}
 
 .ft16{font-size:32rpx;}
 .ft14{font-size:28rpx;}
@@ -24,7 +25,7 @@
 .movie-text{display: block;margin-bottom:16rpx;}
 .movie-detail-info{width:442rpx;padding-left:30rpx;}
 
-.movie-desc-con{padding:30rpx;height:160rpx;overflow:hidden;font-size:28rpx;line-height:1.8em;}
+.movie-desc-con{transition:all 0.4s linear;padding:30rpx;height:160rpx;overflow:hidden;font-size:28rpx;line-height:1.8em;}
 .mOpen{height:460rpx;}
 
 .arrow-se{width:100%;padding:8rpx 0;}
@@ -54,7 +55,25 @@
 
 
 .actor-name{display: block;height:40rpx;line-height:40rpx;font-size:24rpx;overflow:hidden;text-align:center;text-overflow: ellipsis;}
-.actor-roles{color:#999;}
+
 .actor-h{text-align: center;width: 140rpx;height: 240rpx;}
 
 .movie-img3{ width: 140rpx;height: 180rpx;}
+
+.comment-se{padding:20rpx 0 30rpx 0;}
+.comment-con{padding:36rpx 30rpx;border-bottom:1px solid #e5e5e5;}
+.comment-head{display: flex;height:60rpx;margin-bottom:20rpx;overflow: hidden;}
+.comment-user{width:550rpx;}
+.user-ico{width:60rpx;height:60rpx;border-radius:50%;}
+
+.comment-name{margin-left:20rpx;}
+
+.user-ico{vertical-align: middle;}
+.comment-score{vertical-align: middle;}
+
+/*.comment-text{border:1px solid red;}*/
+
+.comment-bottom{display: flex;height:16px;margin-top:20rpx;overflow: hidden;}
+.comment-approve{display:block;width:540rpx;}
+.comment-date{display: block;width:146rpx;}
+.comment-title{padding-left:30rpx;height:80rpx;line-height:80rpx;border-bottom:1px solid #e5e5e5;}
