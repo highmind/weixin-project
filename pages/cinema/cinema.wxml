@@ -1,0 +1,107 @@
+<!--index.wxml-->
+
+
+<view class="srcoll-section">
+<!-- 使用scroll-view -->
+  <scroll-view scroll-y="true" class="scroll-view" bindscrolltoupper="scrollUpper" bindscrolltolower="scrollLower" bindscroll="scroll" lower-threshold="50" scroll-into-view="{{toTop}}">
+   <view id="top"></view>
+    <view class="movie-ul" wx:for="{{movieInfo}}">
+   <!-- 列表项开始 -->
+   <view class="movie-list" bindtap="showMoreInfo" data-movieid="{{item.id}}">
+       <!-- 电影封面图片 -->
+       <view class="movie-img">
+           <image class="movie-i-img" mode="aspectFit" src="{{item.img}}"></image>
+       </view>
+
+        <view class="movie-info-c">
+               <view class="movie-info-row">
+                  <text class="ft16">{{item.nm}}</text>
+               </view>
+               <view class="movie-info-row">
+                  <text class="ft14 color-g1">{{item.scm}}</text>
+               </view>
+               <view class="movie-info-row">
+                  <text class="ft12 color-g1">{{item.showInfo}}</text>
+               </view>
+        </view>
+
+        <view class="movie-info-r">
+                <view wx:if="{{item.sc == 0}}"> 
+                    <text class="movie-score">{{item.wish}}人想看</text> 
+                </view>
+
+                <view wx:else> 
+                    <text class="movie-score">{{item.sc}}分</text> 
+                </view>
+               
+               <button class="more-btn" size="{{primarySize}}" >更多</button>    
+
+        </view>
+
+
+
+   </view>
+<!-- 列表项结束 -->
+
+ </view>
+
+
+
+    <view class="movie-coming">
+           <view class="coming-movie-content">
+             <text class="ft14">即将上映</text>
+           </view>
+       
+          <view class="movie-ul" wx:for="{{movieInfoCom}}">
+         <!-- 列表项开始 -->
+         <view class="movie-list" bindtap="showMoreInfo" data-movieid="{{item.id}}">
+
+             <view class="movie-img">
+                 <image class="movie-i-img" mode="aspectFit" src="{{item.img}}"></image>
+             </view>
+
+              <view class="movie-info-c">
+                     <view class="movie-info-row">
+                        <text class="ft16">{{item.nm}}</text>
+                     </view>
+                     <view class="movie-info-row">
+                        <text class="ft14 color-g1">{{item.scm}}</text>
+                     </view>
+                     <view class="movie-info-row">
+                        <text class="ft12 color-g1">{{item.rt}}</text>
+                     </view>
+              </view>
+
+              <view class="movie-info-r">
+                      <view wx:if="{{item.sc == 0}}"> 
+                          <text class="movie-score">{{item.wish}}人想看</text> 
+                      </view>
+
+                      <view wx:else> 
+                          <text class="movie-score">{{item.sc}}分</text> 
+                      </view>
+                     
+                     <button class="more-btn" size="{{primarySize}}" >更多</button>    
+
+              </view>
+
+         </view>
+      <!-- 列表项结束 -->
+
+       </view>
+
+    </view>
+    
+    <view class="add-more-content">
+        <text class="add-more ft14">上滑加载更多</text>
+    </view>
+
+  </scroll-view>
+ </view>
+
+ <view class="gotop {{toTopStatus ? 'toTopHidden' : ''}}" bindtap="goTop"></view>
+
+
+ <loading hidden="{{hidden}}">
+    加载中...
+</loading>

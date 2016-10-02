@@ -61,7 +61,7 @@
 .movie-img3{ width: 140rpx;height: 180rpx;}
 
 .comment-se{padding:20rpx 0 30rpx 0;}
-.comment-con{padding:36rpx 30rpx;border-bottom:1px solid #e5e5e5;}
+.comment-con{padding:36rpx 30rpx;}
 .comment-head{display: flex;height:60rpx;margin-bottom:20rpx;overflow: hidden;}
 .comment-user{width:550rpx;}
 .user-ico{width:60rpx;height:60rpx;border-radius:50%;}
@@ -73,7 +73,7 @@
 
 /*.comment-text{border:1px solid red;}*/
 
-.comment-bottom{display: flex;height:16px;margin-top:20rpx;overflow: hidden;}
+.comment-bottom{border-bottom:1px solid #e5e5e5;padding-bottom:32rpx;display: flex;height:16px;margin-top:20rpx;overflow: hidden;}
 .comment-approve{display:block;width:540rpx;}
-.comment-date{display: block;width:146rpx;}
+.comment-date{display: block;width:146rpx;height:16px;overflow: hidden;}
 .comment-title{padding-left:30rpx;height:80rpx;line-height:80rpx;border-bottom:1px solid #e5e5e5;}
