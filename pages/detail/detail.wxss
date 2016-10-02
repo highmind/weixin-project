@@ -20,10 +20,10 @@
 
 
 .movie-head{display: flex;padding:60rpx 30rpx;background-color:#5e6c6e;}
-.movie-cover{width:220rpx;height:300rpx;}
+.movie-cover{/*width:220rpx;height:300rpx;*/flex:1;}
 .movie-i-img{border:1px solid #fff;width:214rpx;height:300rpx;}
 .movie-text{display: block;margin-bottom:16rpx;}
-.movie-detail-info{width:442rpx;padding-left:30rpx;}
+.movie-detail-info{/*width:442rpx;*/padding-left:30rpx;flex:2;}
 
 .movie-desc-con{transition:all 0.4s linear;padding:30rpx;height:160rpx;overflow:hidden;font-size:28rpx;line-height:1.8em;}
 .mOpen{height:460rpx;}
@@ -61,19 +61,20 @@
 .movie-img3{ width: 140rpx;height: 180rpx;}
 
 .comment-se{padding:20rpx 0 30rpx 0;}
-.comment-con{padding:36rpx 30rpx;}
-.comment-head{display: flex;height:60rpx;margin-bottom:20rpx;overflow: hidden;}
-.comment-user{width:550rpx;}
-.user-ico{width:60rpx;height:60rpx;border-radius:50%;}
+.comment-con{padding:20rpx 30rpx;}
+
+.comment-head{display: flex;height:60rpx;margin-bottom:20rpx;overflow: hidden;vertical-align: middle}
+.comment-user{flex:4;}
+.comment-score{flex:1;text-align: right}
+.user-ico{vertical-align: middle;width:60rpx;height:60rpx;border-radius:50%;}
 
 .comment-name{margin-left:20rpx;}
 
-.user-ico{vertical-align: middle;}
-.comment-score{vertical-align: middle;}
+
 
 /*.comment-text{border:1px solid red;}*/
 
 .comment-bottom{border-bottom:1px solid #e5e5e5;padding-bottom:32rpx;display: flex;height:16px;margin-top:20rpx;overflow: hidden;}
-.comment-approve{display:block;width:540rpx;}
-.comment-date{display: block;width:146rpx;height:16px;overflow: hidden;}
+.comment-approve{flex:3;}
+.comment-date{flex:1;height:16px;overflow: hidden;}
 .comment-title{padding-left:30rpx;height:80rpx;line-height:80rpx;border-bottom:1px solid #e5e5e5;}

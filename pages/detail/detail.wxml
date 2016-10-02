@@ -74,7 +74,7 @@
           </view>
           
           <view class="comment-score">
-            <text class="a ft12">评分：</text> 
+            <text class="ft12">评分：</text> 
             <text class="color-orange ftbold ft12">{{item.score}}</text>
           </view>
           

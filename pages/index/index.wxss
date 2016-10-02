@@ -12,23 +12,18 @@
 .ft14{font-size:28rpx;}
 .ft12{font-size:24rpx;}
 
-.bottom-section{position:fixed;
-  left:0;bottom:0;
-  width:100%;height:100rpx;
- border-top:2px solid #DE3435;
-  display:flex;
-  font-size:32rpx;
-  background-color: #fff;
-}
+
 
 .movie-btn,.cinema-btn{padding:0 2%;width:46%;text-align: center;line-height:100rpx}
 .movie-hover{background-color: #F8F8F8;color:#DE3435;}
 
-.movie-list{ border-bottom: 1px solid #d6d6d6;padding:20rpx 0;padding-right:1%;display: flex;flex-direction:row;width:98%;}
-.movie-i-img{display:block;width:180rpx;height:200rpx;}
-.movie-content{width:100%;padding-left:10px;font-size:32rpx;disp}
-.movie-info-c{width:350rpx;padding-left:10rpx;}
-.movie-info-r{width:244rpx;}
+.movie-list{ border-bottom: 1px solid #d6d6d6;padding:20rpx 0;padding-right:1%;display: flex;width:98%;}
+.movie-img{flex:1;}
+.movie-i-img{display:block;width:100%;width:180rpx;height:200rpx;}
+.movie-content{width:100%;padding-left:10px;font-size:32rpx;}
+
+.movie-info-c{/*width:350rpx;*//*padding-left:10rpx;*/flex:3;}
+.movie-info-r{/*width:244rpx;*/flex:1;}
 .movie-score{padding-right:16rpx;margin-top:8rpx;display:block;text-align: right;color:#FF9A00;font-weight: bold;font-size:28rpx;}
 .movie-info-row{margin-top:16rpx;}
 
