@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/cinema/cinema"
   ],
   "tabBar": {
     "color":"#717171",
