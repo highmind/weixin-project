@@ -14,21 +14,22 @@
 
   <view class="cinema-se" wx:for="{{cinemaInfo}}" wx:for-item="areaData">
 
-    <view class="cinema-area" >
+    <view class="cinema-area  {{areaData.open ? 'cinema-se-open' : ''}}"  id="{{areaData.id}}"  bindtap="cinemaToggle">
       <text class="area-name ft14 ftbold">{{areaData.item}}</text>
       <view class="top-arrow-img">
         <image class="top-arrow" src="/images/arrowright.png"></image>
        </view>
     </view>
       
-
-    <view class="cinema-con" wx:for="{{areaData.data}}" wx:for-item="areaDetail">
-      <text class="cinema-name ft16">{{areaDetail.nm}}</text>
-      <text class="cinema-addr ft12 color-g1">{{areaDetail.addr}}</text>
+    <view class="cinema-main-con {{areaData.open ? 'cinema-main-open' : ''}}" wx:for="{{areaData.data}}" wx:for-item="areaDetail" >
+      <view class="cinema-con"  data-cinemaid="{{areaDetail.id}}" bindtap="showMoreInfo">
+        <text class="cinema-name ft16">{{areaDetail.nm}}</text>
+        <text class="cinema-addr ft12 color-g1">{{areaDetail.addr}}</text>
+      </view>
     </view>
 
   </view>
-  
+
 </view>
 
  <loading hidden="{{hidden}}">

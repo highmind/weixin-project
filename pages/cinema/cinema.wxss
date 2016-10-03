@@ -8,11 +8,16 @@
 .cinema-area{padding:18rpx 0 20rpx 20rpx;border-top:1px solid #ccc;display: flex;height:50rpx;background-color: #fff;}
 .cinema-se:last-child .cinema-area{border-bottom:1px solid #ccc;}
 .area-name{flex:6;vertical-align: middle;line-height:50rpx;}
+
 .top-arrow-img{flex:1;height:50rpx;}
-.top-arrow{width:40rpx;height:40rpx;vertical-align: middle;}
+.top-arrow{width:40rpx;height:40rpx;vertical-align: middle;transition:all 0.2s linear; }
 
 
+.cinema-main-con{display: none;}
+.cinema-main-open{display: block;}
 .cinema-con{padding:24rpx 0 24rpx 20rpx;background-color: #f8f8f8;border-top:1px solid #d9d9d9;}
 .cinema-se:last-child .cinema-con{border-top:0;}
 .cinema-name,.cinema-addr{display: block;}
 .cinema-addr{margin-top:40rpx;}
+
+.cinema-se-open .top-arrow{transform:rotate(90deg);}
