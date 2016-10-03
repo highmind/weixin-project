@@ -29,9 +29,11 @@ Page({
         for (var i = 0; i < cinemaData.length; i++) {
             if (cinemaData[i].id == id) {
                 cinemaData[i].open = !cinemaData[i].open;
-            } else {
-                cinemaData[i].open = false;
-            }
+            } 
+            //打开以后是手风琴效果
+            // else {
+            //     cinemaData[i].open = false;
+            // }
         }
 
     this.setData({
