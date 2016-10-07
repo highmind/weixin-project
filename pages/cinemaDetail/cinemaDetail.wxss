@@ -1,23 +1,39 @@
 .color-g1{color:#666;}
+.color-g2{color:#999;}
+.color-red1{color:#df3434}
+.color-orange{color:#f07c0a;}
 .ft16{font-size:32rpx;}
 .ft14{font-size:28rpx;}
 .ft12{font-size:24rpx;}
 .ftbold{font-weight: bold;}
 
-.cinema{margin-top:40rpx;}
-.cinema-area{padding:18rpx 0 20rpx 20rpx;border-top:1px solid #ccc;display: flex;height:50rpx;background-color: #fff;}
-.cinema-se:last-child .cinema-area{border-bottom:1px solid #ccc;}
-.area-name{flex:6;vertical-align: middle;line-height:50rpx;}
+.cinema-head,.cinema-info{padding:20rpx 32rpx;}
+.other-info{display:flex;margin-top:12rpx;}
+.cinema-tel{flex:9;}
+.more-wrap{flex:1;height:60rpx;}
+.more{display:block;width:48rpx;height:48rpx;background:url(/images/more-info.png) no-repeat;background-size: 100% 100%;}
 
-.top-arrow-img{flex:1;height:50rpx;}
-.top-arrow{width:40rpx;height:40rpx;vertical-align: middle;transition:all 0.2s linear; }
+.cinema-section{width:100%;overflow:hidden;padding:20rpx 0;background-color: #5b5b5b;}
+/*用于scroll-view横向滚动，必加*/
+.scroll-view_H{white-space: nowrap;}
 
+.scroll-view-item_H{
+    display: inline-block;
+    margin-left:16rpx;
+    width: 165rpx;
+    height: 220rpx;
+/*  border:2px solid #fff;*/
+}
+.movie-img{ width: 165rpx;height: 220rpx;}
+.score{margin-left:12rpx;}
 
-.cinema-main-con{display: none;}
-.cinema-main-open{display: block;}
-.cinema-con{padding:24rpx 0 24rpx 20rpx;background-color: #f8f8f8;border-top:1px solid #d9d9d9;}
-.cinema-se:last-child .cinema-con{border-top:0;}
-.cinema-name,.cinema-addr{display: block;}
-.cinema-addr{margin-top:40rpx;}
+.cinema-dates{padding:20rpx 0;width:100%;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color: #f8f8f8;}
+.cinema-d{margin-left:28rpx;}
 
-.cinema-se-open .top-arrow{transform:rotate(90deg);}
+.cinema-s{padding:20rpx 0;border-bottom:1px solid #dbdbdb;display: flex;text-align: center;}
+.cinema-time,.cinema-price{flex:2;}
+.cinema-end,.cinema-room{display:block;}
+
+.cinema-o-info{flex:6;}
+.cinema-price{display: block;height:80rpx;line-height:80rpx;}
+

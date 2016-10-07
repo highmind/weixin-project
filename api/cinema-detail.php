@@ -1,7 +1,13 @@
 <?php
  header("Content-Type: text/html; charset=UTF-8");
  $url = 'http://m.maoyan.com/showtime/wrap.json';
- $sleep = $_GET["sleep"];//延迟时间
+ // $sleep = $_GET["sleep"];//延迟时间
+ 
+  if(isset($_GET['sleep'])){
+    $sleep = $_GET['sleep'];
+  }else{
+    $sleep = 0; 
+  }
 
  if(isset($_GET['cinemaid'])){
     $cinemaId = $_GET['cinemaid'];

@@ -1,0 +1,159 @@
+{
+    "control": {
+        "expires": 120
+    },
+    "status": 0,
+    "data": {
+        "Dates": [],
+        "currentMovie": "",
+        "cinemaDetailModel": {
+            "callboard": "",
+            "brd": "大地影院",
+            "dis": "",
+            "tel": [
+                "0335-3839992",
+                "0335-3839990"
+            ],
+            "suw": "",
+            "dri": "",
+            "note": "新开设影厅：全景声厅，欢迎体验!",
+            "dealtp": 0,
+            "deals": [
+                {
+                    "price": 16.5,
+                    "title": "16.5元，单人小吃（1份中爆米花+1杯中碳酸饮料）1套",
+                    "id": 0,
+                    "type": 1
+                },
+                {
+                    "price": 28.3,
+                    "title": "28.3元，双人小吃（1份大爆米花+2杯中碳酸饮料）1次",
+                    "id": 0,
+                    "type": 1
+                }
+            ],
+            "imax": 0,
+            "snum": 51,
+            "s": 5.529412,
+            "s1": 6.6666665,
+            "s2": 6.627451,
+            "s3": 7.7647057,
+            "featureTags": [
+                {
+                    "desc": "限网上选座后取票",
+                    "type": 1,
+                    "tag": "取票机"
+                },
+                {
+                    "desc": "1.3米以下儿童免费观看2D/3D,需要1名成人陪同",
+                    "type": 7,
+                    "tag": "儿童优惠"
+                },
+                {
+                    "desc": "地下停车场免费停车",
+                    "type": 5,
+                    "tag": "可停车"
+                },
+                {
+                    "desc": "3D眼镜无需押金",
+                    "type": 4,
+                    "tag": "3D眼镜"
+                },
+                {
+                    "desc": "影院有免费WIFI",
+                    "type": 9,
+                    "tag": "WiFi"
+                }
+            ],
+            "bus": "",
+            "park": "地下停车场免费停车",
+            "area": "海港区",
+            "price": 0,
+            "lat": 39.947464,
+            "lng": 119.58401,
+            "addr": "海港区秦皇东大街世纪港湾广场B栋3层",
+            "nm": "大地影院(世纪港湾店)",
+            "ct": "秦皇岛",
+            "preferential": 0,
+            "sellmin": 15,
+            "sell": true,
+            "id": 7531
+        },
+        "movies": [
+            {
+                "isShowing": true,
+                "nm": "湄公河行动",
+                "img": "http://p0.meituan.net/165.220/movie/8f8efcd7a8c3dbcbe13fe2cd855ea6a42750455.jpg",
+                "sc": 9.3,
+                "preferential": 0,
+                "ver": "2D/中国巨幕",
+                "id": 338391
+            },
+            {
+                "isShowing": true,
+                "nm": "从你的全世界路过",
+                "img": "http://p1.meituan.net/165.220/movie/7c81af730b119bc04087df7cf2c88f0c310212.png",
+                "sc": 8.7,
+                "preferential": 0,
+                "ver": "2D/中国巨幕",
+                "id": 246390
+            },
+            {
+                "isShowing": true,
+                "nm": "爵迹",
+                "img": "http://p0.meituan.net/165.220/movie/28baf2c446790ad1cffa853d2a584076321231.jpg",
+                "sc": 7.9,
+                "preferential": 0,
+                "ver": "3D/IMAX 3D/中国巨幕",
+                "id": 248616
+            },
+            {
+                "isShowing": true,
+                "nm": "王牌逗王牌",
+                "img": "http://p1.meituan.net/165.220/movie/bfffe8731390d5b78e2af5d016846381175313.jpg",
+                "sc": 7.6,
+                "preferential": 0,
+                "ver": "2D",
+                "id": 345257
+            },
+            {
+                "isShowing": true,
+                "nm": "鲁滨逊漂流记",
+                "img": "http://p0.meituan.net/165.220/movie/693fce10093566fb3fb3866a7194d0fc670924.jpg",
+                "sc": 8.7,
+                "preferential": 0,
+                "ver": "2D/3D",
+                "id": 345755
+            },
+            {
+                "isShowing": true,
+                "nm": "逗鸟外传：萌宝满天飞",
+                "img": "http://p1.meituan.net/165.220/movie/6bf31cc60620e22ce4e223267db46d9a1542000.jpg",
+                "sc": 9,
+                "preferential": 0,
+                "ver": "3D/IMAX 3D/中国巨幕",
+                "id": 344961
+            },
+            {
+                "isShowing": true,
+                "nm": "幽灵医院",
+                "img": "http://p0.meituan.net/165.220/movie/4918e718c9621592722ede0b50e1d701662342.jpg",
+                "sc": 4.6,
+                "preferential": 0,
+                "ver": "2D",
+                "id": 368000
+            },
+            {
+                "isShowing": false,
+                "nm": "宾虚",
+                "img": "http://p1.meituan.net/165.220/movie/c80e97784c6e459710c58a2f0aff09f7209899.jpg",
+                "sc": 0,
+                "preferential": 0,
+                "ver": "2D/3D/IMAX 3D/中国巨幕",
+                "id": 257715
+            }
+        ],
+        "DateShow": {},
+        "cssLink": "http://p0.meituan.net/movie/9ca4e6e45293ba96292f00ed964a24a22696.css"
+    }
+}

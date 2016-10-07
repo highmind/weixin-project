@@ -2,27 +2,64 @@
 
 <!-- 进行嵌套循环 -->
 
-<view class="cinema">
+<view class="cinema-wrap">
 
-  <view class="cinema-se" wx:for="{{cinemaInfo}}" wx:for-item="areaData">
+   <view class="cinema-head">
 
-    <view class="cinema-area  {{areaData.open ? 'cinema-se-open' : ''}}"  id="{{areaData.id}}"  bindtap="cinemaToggle">
-      <text class="area-name ft14 ftbold">{{areaData.item}}</text>
-      <view class="top-arrow-img">
-        <image class="top-arrow" src="/images/arrowright.png"></image>
-       </view>
-    </view>
+    <text class="cinemaAddr ft16">{{cinemaDetailInfo.addr}}</text>
+    <view class="other-info">
+      <text class="cinema-tel ft14 color-red1">{{cinemaDetailInfo.tel[0]}}</text>
+      <view class="more-wrap">
+        <text class="more"></text>
+      </view>
       
-    <view class="cinema-main-con {{areaData.open ? 'cinema-main-open' : ''}}" wx:for="{{areaData.data}}" wx:for-item="areaDetail" >
-      <view class="cinema-con"  data-cinemaid="{{areaDetail.id}}" bindtap="showMoreInfo">
-        <text class="cinema-name ft16">{{areaDetail.nm}}</text>
-        <text class="cinema-addr ft12 color-g1">{{areaDetail.addr}}</text>
+    </view>
+    
+   </view>
+
+
+   <view class="cinema-section">
+      <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%;">
+        <view class="scroll-view-item_H" wx:for="{{movies}}">
+          <image class="movie-img" src="{{item.img}}"></image>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="cinema-info">
+      <text class="ft14">{{currentMovie.nm}}</text>
+      <text class="ft14 score color-orange ftbold">{{currentMovie.sc}}分</text>
+    </view>
+
+    <view class="cinema-dates">
+      <text class="cinema-d ft14 color-g1" wx:for="{{dates}}" data-date="{{item.slug}}">{{item.text}}</text>
+    </view>
+
+    <view class="cinema-show">
+
+      <view class="cinema-s" wx:for="{{dateShow}}">
+
+        <view class="cinema-time">
+          <text class="cinema-start color-red1 ftbold ft16">{{item.tm}}</text>
+          <text class="cinema-end color-g2 ft12">{{item.end}}结束</text>
+        </view>
+
+
+        <view class="cinema-o-info">
+          <text class="cinema-cls color-g2 ft14">{{item.lang}}{{item.tp}}</text>
+          <text class="cinema-room color-g2 ft14">{{item.th}}</text>
+        </view>
+    
+        <text class="cinema-price color-red1 ft16 ftbold">{{item.sellPrStr}}</text>
+
       </view>
     </view>
 
-  </view>
+
 
 </view>
+
+
 
  <loading hidden="{{hidden}}">
     加载中...

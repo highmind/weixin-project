@@ -4,47 +4,32 @@ var app = getApp()
 
 Page({
   data: {
-    cinemaInfo : [],     //影院信息
+    cinemaDetailInfo : {},     //影院详细信息
+    dates:[],                  // 日期
+    movies:[],                 // 该影院上映的电影
+    currentMovie:{},           //当前电影信息
+    dateShow : {},             // 日期对应的电影详细信息， 播放厅等
+    currentDate: '',           //进入日期用于 展示电影信息详情，如2016-10-07
     hidden: true,       //loading 设置
-    subhidden : true   //子菜单隐藏
+    scrollTop: 100
   },
 
-
-  //查看详情,通过点击事件传参，参数绑定在 view上 使用 data-movieid形式
-  showMoreInfo: function(e){
-      var cinemaId = e.currentTarget.dataset.cinemaid;
-      console.log(cinemaId);
-      wx.navigateTo({
-        url: '../cinemaDetail/cinemaDetail?cinemaId=' + cinemaId
-      })
+  upper: function(e) {
+    console.log(e)
+  },
+  lower: function(e) {
+    console.log(e)
+  },
+  scroll: function(e) {
+    console.log(e)
   },
 
-  //区点击操作，收起或者展开 影院信息
-  cinemaToggle: function(e){
-    //获取点击元素的id
-    var id = e.currentTarget.id;
-
-    //通过改变cinemaInfo中的  open 进行重新渲染页面
-    var cinemaData = this.data.cinemaInfo;
-
-    console.log(cinemaData[1].id);
-    //遍历数据，将 与点击元素相同id的 元素的  open 取反，即开---> 关  关---->开
-      for (var i = 0; i < cinemaData.length; i++) {
-          if (cinemaData[i].id == id) {
-             cinemaData[i].open = !cinemaData[i].open;
-          } 
-            //打开以后是手风琴效果
-            // else {
-            //     cinemaData[i].open = false;
-            // }
-      }
-
-     this.setData({
-        cinemaInfo : cinemaData
-
-     })
-
+  tapMove: function(e) {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
   },
+
 
    onShow: function(){
   //设置顶部部栏文字
@@ -60,21 +45,29 @@ Page({
     });
   },
 
-  onLoad: function () {
+  onLoad: function (res) {
     console.log('onLoad.... main')
     var that = this;
+
+     if(res != null){
+      //获取影院id
+       cinemaId = res.cinemaId;
+       console.log(cinemaId)
+     }
+
+
     //页面加载时，打开loading
     this.setData({
-      hidden:false,
-      subhidden : true
+      hidden:false
     })
     //调用应用实例的方法获取全局数据
-    //调用远程接口数据
+    //调用远程接口数据,获取影院详情，包括上映的电影，
     wx.request({
-      url: 'http://localhost/wx-project/api/cinema-my.php',
+      url: 'http://localhost/wx-project/api/cinema-detail.php',
 
       data: {
-         sleep : 0 //接口返回数据延迟时间，用于测试loading
+         sleep : 0, //接口返回数据延迟时间，用于测试loading
+         cinemaid : cinemaId
       },
 
       header: {
@@ -82,32 +75,71 @@ Page({
       },
 
       success: function(res) {
-        // 进行数据格式转换
-        // 转换成Object, Object, Object, Object, Object]
-        // 0:Object
-        // data:Array[5]
-        // item:"海港区"
-        // id: 用于进行点击事件
-        // open: 是否打开
+       
+        console.log('通过影院id 得到的数据');
+        console.log(res.data);
 
-        var cinemaData = [];
-        var i = 0; 
+        //获取当前影院上映的电影的第一条的 id，用于查询 场次 票价等
+        var movieId = '';
+        //该影院有电影上映时
+        if(res.data.data.movies.length != 0){
+           movieId = res.data.data.movies[0].id;
+           console.log(movieId);
 
-        for(var item in res.data.data){
-          var json = {'item' : item, 'data' : res.data.data[item], 'id' : 'cinema' + i, 'open':false };
-          i++;
-          cinemaData.push(json);
+            console.log('当前影院上映电影的第一条 id');
+            console.log(movieId);
+           
+            //通过id获取 该电影在该影院的 相关信息 如场次和票价等
+            wx.request({
+
+               url: 'http://localhost/wx-project/api/cinema-detail.php',
+
+               data: {
+                 sleep : 0, //接口返回数据延迟时间，用于测试loading
+                 cinemaid : cinemaId,
+                 movieid  : movieId
+               },
+
+               header: {
+                'Content-Type': 'application/json'
+               },
+
+               success : function(res){
+                   console.log(res.data);
+                   var dataInfo = res.data.data;
+                   console.log("第一条场次信息")
+                   console.log(dataInfo.DateShow[dataInfo.Dates[0].slug])
+
+                   var firstData = dataInfo.DateShow[dataInfo.Dates[0].slug];// 日期对应的电影详细信息， 播放厅等
+                   //将 sellPrStr 格式化，去除html代码，提取价格，45336， 取中间 33
+                   for(var i = 0; i < firstData.length; i++){
+                     firstData[i].sellPrStr = firstData[i].sellPrStr.replace(/<[^>]+>/g,"").substring(2,4);
+                   }
+
+
+                   that.setData({
+                      cinemaDetailInfo : dataInfo.cinemaDetailModel,       //影院详细信息
+                      currentMovie: dataInfo.currentMovie,                 //当前电影信息
+                      dates:dataInfo.Dates,                                // 日期
+                      movies:dataInfo.movies,                              // 该影院上映的电影
+                      dateShow : firstData,                                // 日期对应的电影详细信息， 播放厅等
+                      currentDate : dataInfo.Dates[0].slug,                //当前日期
+                      hidden: true
+                  })
+               }
+
+            });
+
+
         }
-        //将第1个设置成打开
-        cinemaData[0].open = true;
+        else{
+          // 这里做没有电影的提示
+        }
 
-        console.log('格式化以后的数据');
-        console.log(cinemaData);
-
-        that.setData({
-           cinemaInfo : cinemaData,
-           hidden: true,
-        });
+       
+        
+        
+       
 
       }
 
