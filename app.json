@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/detail/detail",
-    "pages/cinema/cinema"
+    "pages/cinema/cinema",
+    "pages/cinemaDetail/cinemaDetail"
   ],
   "tabBar": {
     "color":"#717171",
