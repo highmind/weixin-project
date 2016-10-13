@@ -60,8 +60,9 @@ Page({
  // res为页面间传参对象
   onLoad: function (res) {
     console.log('onLoad.... detail')
-   
+   console.log(res)
     var that = this;
+    var movieId;
     //设置loading状态
     that.setData({  
         hidden: false

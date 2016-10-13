@@ -48,6 +48,7 @@ Page({
   onLoad: function (res) {
     console.log('onLoad.... main')
     var that = this;
+    var cinemaId;
 
      if(res != null){
       //获取影院id

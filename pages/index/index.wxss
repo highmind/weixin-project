@@ -1,5 +1,5 @@
 /**main.wxss**/
-.scroll-view{height:100%;}
+.scroll-view{height:1200rpx;}
 .srcoll-section{height:100%;overflow:hidden;}
 .button-hover {
   background-color: red;
@@ -35,3 +35,4 @@
 
 .gotop{display: block;width:74rpx;height:74rpx;background:url(/images/gotop.png) no-repeat;background-size:cover;position: fixed;right:20rpx;bottom:100rpx;}
 .toTopHidden{display: none;}
+
